@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Play with lifecycle</string>
+    <string name="finish_button">Finish!</string>
+</resources>
