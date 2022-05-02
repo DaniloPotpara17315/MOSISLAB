@@ -1,7 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="elfak.mosis.myplaces.MainActivity">
+    tools:context="elfak.mosis.myplaces.MyPlacesList">
     <item
         android:id="@+id/show_map_item"
         android:orderInCategory="100"
