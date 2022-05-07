@@ -16,8 +16,11 @@
     <string name="about_text">Lorem ipsum dolor sit amet</string>
     <string name="ok">OK</string>
     <string name="title_activity_my_places_list">MyPlacesList</string>
-    <string name="place1">Tvrdjava</string>
-    <string name="place2">Cair</string>
-    <string name="place3">Park Svetog Save</string>
-    <string name="place4">Trg Kralja Milana</string>
+    <string name="title_activity_edit_my_place">EditMyPlaceActivity</string>
+    <string name="editmyplace_name_label">Name:</string>
+    <string name="editmyplace_desc_label">Description:</string>
+    <string name="editmyplace_add_label">Add</string>
+    <string name="editmyplace_cancel_label">Cancel</string>
+    <string name="viewmyplace_add_label">Ok</string>
+    <string name="title_activity_view_my_place">ViewMyPlaceActivity</string>
 </resources>

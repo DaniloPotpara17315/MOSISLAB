@@ -1,5 +1,6 @@
 package elfak.mosis.myplaces
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
@@ -31,8 +32,8 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+            val i = Intent(this,EditMyPlaceActivity::class.java)
+            startActivityForResult(i,1)
         }
     }
 
@@ -48,7 +49,10 @@ class MainActivity : AppCompatActivity() {
         // as you specify a parent activity in AndroidManifest.xml.
         when (item.itemId) {
             R.id.action_show_map -> Toast.makeText(this,"Show Map!",Toast.LENGTH_SHORT).show()
-            R.id.action_new_place -> Toast.makeText(this,"New Place!",Toast.LENGTH_SHORT).show()
+            R.id.action_new_place -> {
+                val i:Intent = Intent(this,EditMyPlaceActivity::class.java)
+                startActivityForResult(i,1)
+            }
             R.id.action_my_places_list -> {
                 val i:Intent = Intent(this,MyPlacesList::class.java)
                 startActivity(i)
@@ -61,6 +65,12 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode == 1){
+            Toast.makeText(this,resultCode.toString(),Toast.LENGTH_SHORT).show()
+        }
+    }
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration)
