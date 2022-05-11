@@ -46,7 +46,7 @@ class MyPlacesList : AppCompatActivity() {
         pregled.setOnCreateContextMenuListener{contextMenu,view,contextMenuInfo->
             val info:AdapterView.AdapterContextMenuInfo = contextMenuInfo as AdapterView.AdapterContextMenuInfo
             val place:MyPlace = MyPlacesData.getPlace(info.position)
-            contextMenu.setHeaderTitle(place.getName())
+            contextMenu.setHeaderTitle(place.name)
             contextMenu.add(0,1,1,"View Place")
             contextMenu.add(0,2,2,"Edit Place")
         }

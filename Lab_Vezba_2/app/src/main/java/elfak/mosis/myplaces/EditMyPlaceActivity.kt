@@ -49,8 +49,8 @@ class EditMyPlaceActivity : AppCompatActivity(), View.OnClickListener {
         else if(position>=0){
             finishedButton.setText("Save")
             var place = MyPlacesData.getPlace(position)
-            findViewById<EditText>(R.id.editmyplace_name_edit).setText(place.getName())
-            findViewById<EditText>(R.id.editmyplace_desc_edit).setText(place.getDesc())
+            findViewById<EditText>(R.id.editmyplace_name_edit).setText(place.name)
+            findViewById<EditText>(R.id.editmyplace_desc_edit).setText(place.description)
         }
 
 
@@ -102,8 +102,8 @@ class EditMyPlaceActivity : AppCompatActivity(), View.OnClickListener {
                 }
                 else{
                     var place = MyPlacesData.getPlace(position)
-                    place.setName((findViewById<EditText>(R.id.editmyplace_name_edit).text.toString()))
-                    place.setDesc((findViewById<EditText>(R.id.editmyplace_desc_edit).text.toString()))
+                    place.name=findViewById<EditText>(R.id.editmyplace_name_edit).text.toString()
+                    place.description=findViewById<EditText>(R.id.editmyplace_desc_edit).text.toString()
 
                 }
 

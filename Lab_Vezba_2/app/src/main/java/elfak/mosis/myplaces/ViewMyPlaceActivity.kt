@@ -44,8 +44,8 @@ class ViewMyPlaceActivity : AppCompatActivity() {
         }
     if(position>=0) {
         var place = MyPlacesData.getPlace(position)
-        findViewById<TextView>(R.id.viewmyplace_name_text).setText(place.getName())
-        findViewById<TextView>(R.id.viewmyplace_desc_text).setText(place.getDesc())
+        findViewById<TextView>(R.id.viewmyplace_name_text).setText(place.name)
+        findViewById<TextView>(R.id.viewmyplace_desc_text).setText(place.description)
 
         }
 
