@@ -26,4 +26,8 @@
     <string name="edit_description_prompt">Description:</string>
     <string name="edit_btn_add">ADD</string>
     <string name="edit_btn_cancel">CANCEL</string>
+    <string name="name">Name:</string>
+    <string name="description">Description:</string>
+    <string name="close">Close</string>
+    <string name="btn_save">Save</string>
 </resources>

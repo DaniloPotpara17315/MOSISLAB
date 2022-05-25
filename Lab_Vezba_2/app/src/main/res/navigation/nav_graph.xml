@@ -39,5 +39,17 @@
         <action
             android:id="@+id/action_fragmentList_to_fragmentHome"
             app:destination="@id/fragmentHome" />
+        <action
+            android:id="@+id/action_fragmentList_to_fragmentView"
+            app:destination="@id/fragmentView" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentView"
+        android:name="elfak.mosis.myplaces.FragmentView"
+        android:label="fragment_view"
+        tools:layout="@layout/fragment_view" >
+        <action
+            android:id="@+id/action_fragmentView_to_fragmentList"
+            app:destination="@id/fragmentList" />
     </fragment>
 </navigation>

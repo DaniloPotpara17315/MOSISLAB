@@ -2,6 +2,7 @@ package elfak.mosis.myplaces
 
 import android.os.Bundle
 import android.view.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
@@ -57,10 +58,16 @@ class FragmentHome : Fragment() {
         binding.buttonFirst.setOnClickListener {
             findNavController().navigate(R.id.action_fragmentHome_to_fragmentList)
         }
+
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onStart() {
+        super.onStart()
+        (requireActivity() as AppCompatActivity).supportActionBar?.title = "Fragment Home"
     }
 }

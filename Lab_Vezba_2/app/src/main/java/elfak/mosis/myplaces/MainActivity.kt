@@ -11,6 +11,9 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
+import androidx.navigation.NavController
+import androidx.navigation.NavDestination
 import elfak.mosis.myplaces.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -30,9 +33,24 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
+        navController.addOnDestinationChangedListener{ controller, destination, arguments ->
+                if (destination.id == R.id.fragmentEdit || destination.id == R.id.fragmentView) {
+                    binding.fab.hide()
+                }
+                else {
+                    binding.fab.show()
+                }
+            }
+
+
         binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+            if (navController.currentDestination?.id == R.id.fragmentHome) {
+                navController.navigate(R.id.action_fragmentHome_to_fragmentEdit)
+            }
+            else if (navController.currentDestination?.id == R.id.fragmentList) {
+                navController.navigate(R.id.action_fragmentList_to_fragmentEdit)
+            }
+
         }
     }
 
