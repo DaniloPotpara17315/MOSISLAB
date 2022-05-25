@@ -20,4 +20,10 @@
     <string name="place2">Cair</string>
     <string name="place3">Park Svetog Save</string>
     <string name="place4">Trg Kralja Milana</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="edit_name_prompt">Name:</string>
+    <string name="edit_description_prompt">Description:</string>
+    <string name="edit_btn_add">ADD</string>
+    <string name="edit_btn_cancel">CANCEL</string>
 </resources>

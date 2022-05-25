@@ -20,17 +20,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MyPlacesList"
-            android:label="@string/title_activity_my_places_list"
-            android:exported="false"
-            android:theme="@style/Theme.MyPlaces.NoActionBar"
-            android:parentActivityName="elfak.mosis.myplaces.MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="elfak.mosis.myplaces.MainActivity"
-                />
-        </activity>
+
         <activity
             android:name=".About"
             android:label="About"

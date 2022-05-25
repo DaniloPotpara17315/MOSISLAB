@@ -3,26 +3,41 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
-
+    app:startDestination="@id/fragmentHome">
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="elfak.mosis.myplaces.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
-
+        android:id="@+id/fragmentHome"
+        android:name="elfak.mosis.myplaces.FragmentHome"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_fragmentHome_to_fragmentEdit"
+            app:destination="@id/fragmentEdit" />
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentList"
+            app:destination="@id/fragmentList" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="elfak.mosis.myplaces.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
-
+        android:id="@+id/fragmentEdit"
+        android:name="elfak.mosis.myplaces.FragmentEdit"
+        android:label="fragment_edit"
+        tools:layout="@layout/fragment_edit" >
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_fragmentEdit_to_fragmentHome"
+            app:destination="@id/fragmentHome" />
+        <action
+            android:id="@+id/action_fragmentEdit_to_fragmentList"
+            app:destination="@id/fragmentList" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentList"
+        android:name="elfak.mosis.myplaces.FragmentList"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_fragmentList_to_fragmentEdit"
+            app:destination="@id/fragmentEdit" />
+        <action
+            android:id="@+id/action_fragmentList_to_fragmentHome"
+            app:destination="@id/fragmentHome" />
     </fragment>
 </navigation>
