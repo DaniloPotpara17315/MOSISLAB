@@ -85,6 +85,7 @@ class FragmentList : Fragment() {
                 menu?.add(0,1,1, "View Place")
                 menu?.add(0,2,2, "Edit Place")
                 menu?.add(0,3,3, "Delete Place")
+                menu?.add(0,4,4, "Show on Map")
 
             }
         })
@@ -106,8 +107,20 @@ class FragmentList : Fragment() {
                 findNavController().navigate(R.id.action_fragmentList_to_fragmentEdit)
             }
             3 -> {
-                Toast.makeText(context, "Delete Item", Toast.LENGTH_SHORT).show()
+                myPlacesViewModel.myPlacesList.removeAt(info.position)
+                binding.myPlacesList.adapter = this@FragmentList.context?.let {
+                    ArrayAdapter<MyPlace>(
+                        it,
+                        android.R.layout.simple_list_item_1,
+                        myPlacesViewModel.myPlacesList
+                    )
+                }
             }
+            4 -> {
+                myPlacesViewModel.selected = myPlacesViewModel.myPlacesList[info.position]
+                findNavController().navigate(R.id.action_list_to_map)
+                }
+
         }
         return super.onContextItemSelected(item)
     }
